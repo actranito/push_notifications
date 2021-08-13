@@ -20,6 +20,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_messaging: ^10.0.4
   firebase_core: ^1.4.0
+  another_flushbar: ^1.10.24
 
 dev_dependencies:
   flutter_test:
@@ -35,6 +36,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - assets/images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -1,8 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:push_notifications/services/notifications_service.dart';
 import 'package:push_notifications/views/fcm_token_view.dart';
-import 'package:push_notifications/views/initial_view.dart';
+import 'package:push_notifications/views/home_view.dart';
 import 'package:push_notifications/views/porto_view.dart';
 
 void main() async {
@@ -19,8 +18,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => HomeView(),
-        '/fcmKeyRoute': (context) => FcmTokenView(),
-        '/portoRoute': (context) => PortoView(),
+        FcmTokenView.route: (context) => FcmTokenView(),
+        PortoView.route: (context) => PortoView(),
       },
     );
   }

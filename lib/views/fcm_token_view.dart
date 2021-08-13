@@ -2,6 +2,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
 class FcmTokenView extends StatelessWidget {
+  static final String route = '/fcmTokenViewRoute';
   const FcmTokenView({Key? key}) : super(key: key);
 
   @override
@@ -17,7 +18,33 @@ class FcmTokenView extends StatelessWidget {
               return CircularProgressIndicator();
             } else {
               print(tokenSnapshot.data);
-              return Text('FCM Token: ${tokenSnapshot.data}');
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 100.0),
+                      child: Text(
+                        'My FCM Token',
+                        style: TextStyle(
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 3,
+                      child: Container(),
+                    ),
+                    Text('${tokenSnapshot.data}'),
+                    Expanded(
+                      flex: 5,
+                      child: Container(),
+                    ),
+                  ],
+                ),
+              );
             }
           },
         ),
